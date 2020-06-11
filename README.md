@@ -2,8 +2,6 @@
 
 ---
 
-<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.jsconfig=TeX-MML-AM_CHTML"> </script>
-
 ![avatar](https://github.com/gA4ss/MyAKS/tree/master/img/pip.png)
 
 $\quad$近几年最著名的就算**AKS**算法了。由三个印裔的哥们设计的（算法的名称取自他们的首字母）。所以就在国庆期间翻译了这篇论文。中文翻译过来大意叫做**在多项式时间内的素性确定算法**。其实算法本身并不复杂，理解起来也不难。但是其中有一个多项式消减问题。国庆期间大概花了一个小时左右写好了算法流程本身。然而多项式消减这个操作我陆陆续续写了两周
