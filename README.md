@@ -4,17 +4,17 @@
 
 <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.jsconfig=TeX-MML-AM_CHTML"> </script>
 
-![avatar](https://github.com/gA4ss/MyAKS/raw/master/img/pip.png)
+![avatar](https://github.com/gA4ss/MyAKS/tree/master/img/pip.png)
 
 $\quad$近几年最著名的就算**AKS**算法了。由三个印裔的哥们设计的（算法的名称取自他们的首字母）。所以就在国庆期间翻译了这篇论文。中文翻译过来大意叫做**在多项式时间内的素性确定算法**。其实算法本身并不复杂，理解起来也不难。但是其中有一个多项式消减问题。国庆期间大概花了一个小时左右写好了算法流程本身。然而多项式消减这个操作我陆陆续续写了两周
 左右。
 其实本来也花不到那么长的时间，只是范了**程序员**的通病，慢慢的把一个小程序越写越大，到基本功能完成时写了$2000$行左右的_python_代码（如果用_C/C++_的话，应该在$3000$行左右）。实现了一个简易的符号系统（其中对外的输出使用**Latex**的数学公式表示），可以做**二项式展开**，**多项式合并**，以及**多项式的加减乘除**操作。在上周天的感觉在数值为分数时**自动配方**不是很好，又重写了一个叫做_yvalue_的数值类，把浮点数与整数在保存时，就转化成分数的形式。在求值时才展开。还可以处理类似$\frac{\frac{15}{47}}{\frac{5}{7}}$这样的形式。连分数的处理是OK的。
 多项式的消减的逻辑还是很烧脑的。本来**AKS**只需要一个一元$n$次的展开即可，出于一个`程序员的态度`，我还是完成了**多元多次式**的运算。下图显示了。$P2 \pmod{P3}$后的商式$P4\_q$与余式$P4\_r$。其中$P2$是$(x+a)^7$展开后的结果。
 
-![avatar](https://github.com/gA4ss/MyAKS/raw/master/img/e1.png)
+![avatar](https://github.com/gA4ss/MyAKS/tree/master/img/e1.png)
 下图是我实现的**AKS**算法的流程输出，感觉可以当做教学课件了。现在网上基本找不到**AKS**的完整真正实现，有些实现都是直接把$X$代入一个固定的数值，这样其实不能算是**AKS**算法，只能算是该算法的一个应用。这样在数值小的时候没问题，当要确定的一个数过大时就没有用了。其中多项式消减操作就是为了避免处理数值过大后大数运算带来的效率问题。
 下图是程序的输出截图：
-![avatar](https://github.com/gA4ss/MyAKS/raw/master/img/e2.png)
+![avatar](https://github.com/gA4ss/MyAKS/tree/master/img/e2.png)
 这份代码中，需要使用大数运算库`gmpy2`的支持。运行环境为`python34`和`python27`。3.6目前不支持原因在于`gmpy2`不支持3.6的版本。另外还需要说明的是程序有`bug`没有修订，`gmpy2`没有在所有的运算中使用，空了时间再填补上吧。
 下面译文还有一些需要说明的是有些是我自己的注释，使用以下这种方式：
 > 这里是我的注释
